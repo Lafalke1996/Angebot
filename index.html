@@ -3481,12 +3481,12 @@ button,.form-input,.form-select,.checkbox-container,.card,.nav-tab{transition:bo
         }
 
         function calculateAndShowResults() {
-            const childAge = parseInt(document.getElementById('childAge').value) || 5;
+            const childAge = parseInt(document.getElementById('childAge').value) || 0;
             const endAge = parseInt(document.getElementById('endAge').value) || 67;
             const startCapital = parseFloat(document.getElementById('startCapital').value) || 0;
             const monthlyAmount = parseFloat(document.getElementById('monthlyAmount').value) || 100;
-            const smartKidsTargetStr = document.getElementById('smartKidsTarget').value || '250.000';
-            const smartKidsTarget = parseFloat(smartKidsTargetStr.replace(/\./g, '')) || 250000;
+            const smartKidsTargetStr = document.getElementById('smartKidsTarget').value || '20.000';
+            const smartKidsTarget = parseFloat(smartKidsTargetStr.replace(/\./g, '')) || 20000;
             
             const duration = endAge - childAge;
             const totalContributions = startCapital + (monthlyAmount * 12 * duration);
