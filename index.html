@@ -3419,12 +3419,13 @@ button,.form-input,.form-select,.checkbox-container,.card,.nav-tab{transition:bo
             const endAge = parseInt(document.getElementById('endAge').value) || 67;
             const startCapital = parseFloat(document.getElementById('startCapital').value) || 0;
             const monthlyAmount = parseFloat(document.getElementById('monthlyAmount').value) || 100;
-            const smartKidsTargetStr = document.getElementById('smartKidsTarget').value || '250.000';
-            const smartKidsTarget = parseFloat(smartKidsTargetStr.replace(/\./g, '')) || 250000;
+            const smartKidsTargetStr = document.getElementById('smartKidsTarget').value || '20000';
+            const smartKidsTarget = parseFloat(smartKidsTargetStr.replace(/\./g, '')) || 20000;
             const effectiveCosts = parseFloat(document.getElementById('effectiveCosts').value) || 0.6;
             
             const duration = endAge - childAge;
             const closingCosts = ((monthlyAmount * 12 * 37) + startCapital) * 0.025;
+            const totalContributions = startCapital + (monthlyAmount * 12 * duration);
             // Effective costs are calculated yearly on the total balance until endAge
             const totalEffectiveCosts = closingCosts + (smartKidsTarget * (effectiveCosts / 100) * duration);
             
