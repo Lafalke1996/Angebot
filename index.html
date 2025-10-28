@@ -3534,30 +3534,34 @@ button,.form-input,.form-select,.checkbox-container,.card,.nav-tab{transition:bo
             createComparisonChart();
         }
 
-        function calculateSavingsBook(startCapital, monthlyAmount, duration) {
-            const interestRate = 0.005; // 0.5% annual interest
-            let balance = startCapital;
-            
-            for (let year = 0; year < duration; year++) {
-                balance = balance * (1 + interestRate) + (monthlyAmount * 12);
-            }
-            
-            return Math.round(balance);
-        }
+       function calculateSavingsBook(startCapital, monthlyAmount, durationYears) {
+       const annualRate = 0.005; // 0,5 % Zinsen p.a.
+       let balance = startCapital;
 
-        function calculateBuildingSavings(startCapital, monthlyAmount, duration) {
-            const interestRate = 0.01; // 1.0% annual interest
-            const totalContributions = startCapital + (monthlyAmount * 12 * duration);
-            const closingFee = totalContributions * 0.01; // 1% closing fee
-            
-            let balance = startCapital - (startCapital * 0.01); // Apply closing fee to start capital
-            
-            for (let year = 0; year < duration; year++) {
-                const yearlyContribution = monthlyAmount * 12;
-                balance = balance * (1 + interestRate) + yearlyContribution;
-            }
-            
-            return Math.round(balance - closingFee);
+       for (let year = 0; year < durationYears; year++) {
+        // Jährliche Einzahlungen (12 Monate)
+        balance += monthlyAmount * 12;
+
+        // Jahreszins auf das gesamte Guthaben nach Einzahlung
+        balance *= (1 + annualRate);
+    }
+
+    return Math.round(balance);
+        }
+function calculateSavingsBook(startCapital, monthlyAmount, durationYears) {
+    const annualRate = 0.005; // 0,5 % Zinsen p.a.
+    let balance = startCapital;
+
+    for (let year = 0; year < durationYears; year++) {
+        // Jährliche Einzahlungen (12 Monate)
+        balance += monthlyAmount * 12;
+
+        // Jahreszins auf das gesamte Guthaben nach Einzahlung
+        balance *= (1 + annualRate);
+    }
+
+    return Math.round(balance);
+       
         }
 
         function createComparisonChart() {
