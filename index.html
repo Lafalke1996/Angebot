@@ -2052,7 +2052,7 @@ button,.form-input,.form-select,.checkbox-container,.card,.nav-tab{transition:bo
 </div>
 <div class="form-group">
 <label class="form-label">Endergebnis SmartKidsInvest (€)</label>
-<input class="form-input" id="smartKidsTarget" onchange="formatTargetAmount(); updateLivePreview()" placeholder="250.000" type="text" value="250.000"/>
+<input class="form-input" id="smartKidsTarget" onchange="formatTargetAmount(); updateLivePreview()" placeholder="20.000" type="text" value="20.000"/>
 <p style="font-size: 0.75rem; color: #6b7280; margin-top: 0.5rem;">Zielwert für SmartKidsInvest-Konzept</p>
 </div>
 </div>
@@ -3481,7 +3481,7 @@ button,.form-input,.form-select,.checkbox-container,.card,.nav-tab{transition:bo
         }
 
         function calculateAndShowResults() {
-            const childAge = parseInt(document.getElementById('childAge').value) || 5;
+            const childAge = parseInt(document.getElementById('childAge').value) || 0;
             const endAge = parseInt(document.getElementById('endAge').value) || 67;
             const startCapital = parseFloat(document.getElementById('startCapital').value) || 0;
             const monthlyAmount = parseFloat(document.getElementById('monthlyAmount').value) || 100;
