@@ -3424,11 +3424,7 @@ button,.form-input,.form-select,.checkbox-container,.card,.nav-tab{transition:bo
             const effectiveCosts = parseFloat(document.getElementById('effectiveCosts').value) || 0.6;
             
             const duration = endAge - childAge;
-            const durationTo40 = 40 - childAge;
-            // Calculate closing costs always until 67, but total contributions until endAge
-            const totalContributions = startCapital + (monthlyAmount * 12 * duration);
-            const totalContributionsTo40 = startCapital + (monthlyAmount * 12 * durationTo40);
-            const closingCosts = totalContributionsTo40 * 0.025;
+            const closingCosts = ((monthlyAmount * 12 * 37) + startCapital) * 0.025;
             // Effective costs are calculated yearly on the total balance until endAge
             const totalEffectiveCosts = closingCosts + (smartKidsTarget * (effectiveCosts / 100) * duration);
             
@@ -3615,9 +3611,7 @@ button,.form-input,.form-select,.checkbox-container,.card,.nav-tab{transition:bo
             document.getElementById('summaryReturn').textContent = `+${smartKidsReturn}%`;
 
             const effectiveCostsRate = parseFloat(document.getElementById('effectiveCosts').value) || 0;
-            const durationTo40 = Math.max(0, Math.min(40 - childAge, duration));
-            const totalContributionsTo40 = startCapital + (monthlyAmount * 12 * durationTo40);
-            const closingCosts = totalContributionsTo40 * 0.025;
+            const closingCosts = ((monthlyAmount * 12 * 37) + startCapital) * 0.025;
 
             const percentFormatter = typeof window.__fmtPct === 'function'
                 ? window.__fmtPct
