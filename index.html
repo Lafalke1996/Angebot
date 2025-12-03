@@ -2678,6 +2678,125 @@ button,.form-input,.form-select,.checkbox-container,.card,.nav-tab{transition:bo
 <hr class="thin"/>
 </div>
 </div>
+
+<!-- Wertentwicklung Chart Section -->
+<div class="card mb-8" style="padding: 1.5rem;">
+    <h2 class="card-title" style="margin-bottom: 0.5rem;">Wertentwicklung</h2>
+    <p style="color: #22c55e; font-size: 0.875rem; font-weight: 500; margin-bottom: 1rem;">
+        Rendite Ansparphase (angenommen 7% Wertentwicklung)
+    </p>
+    <div style="position: relative; height: 350px;">
+        <canvas id="wertentwicklungChart"></canvas>
+    </div>
+    <div style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="width: 12px; height: 12px; background: #22c55e; border-radius: 2px;"></div>
+            <span style="font-size: 0.875rem; color: #64748b;">SmartKidsInvest (Baloise)</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="width: 12px; height: 12px; background: #eab308; border-radius: 2px;"></div>
+            <span style="font-size: 0.875rem; color: #64748b;">Depot</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="width: 12px; height: 12px; background: #ef4444; border-radius: 2px;"></div>
+            <span style="font-size: 0.875rem; color: #64748b;">Einzahlung (100 € / Monat)</span>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="card mb-8" style="padding: 1.5rem;">
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <!-- Baloise Row -->
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="width: 32px; height: 32px; background: #1e3a8a; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <span style="font-size: 0.875rem; font-weight: 500; color: #1e293b;">Baloise Best Invest Stand 02.2025</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <span style="background: rgba(34, 197, 94, 0.1); color: #22c55e; padding: 0.25rem 0.75rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500;">↑ 6.043,78 €</span>
+                <span style="font-size: 0.875rem; font-weight: 500; color: #1e293b;">44.406,03 €</span>
+            </div>
+        </div>
+        <!-- Depot Row -->
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="width: 32px; height: 32px; background: rgba(234, 179, 8, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 10v4M8 10v4M16 10v4"/></svg>
+                </div>
+                <span style="font-size: 0.875rem; font-weight: 500; color: #1e293b;">Depot</span>
+            </div>
+            <span style="font-size: 0.875rem; font-weight: 500; color: #1e293b;">38.362,25 €</span>
+        </div>
+        <!-- Einzahlung Row -->
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="width: 32px; height: 32px; background: rgba(239, 68, 68, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"/></svg>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 0.875rem; font-weight: 500; color: #1e293b;">Einzahlung</span>
+                    <span style="font-size: 0.75rem; color: #64748b;">(100 € / Monat)</span>
+                </div>
+            </div>
+            <span style="font-size: 0.875rem; font-weight: 500; color: #1e293b;">22.800,00 €</span>
+        </div>
+    </div>
+</div>
+
+<!-- Fondswechsel Section -->
+<div class="card mb-8" style="padding: 1.5rem;">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+        <div>
+            <h2 class="card-title" style="margin-bottom: 0.25rem;">Fondswechsel simulieren</h2>
+            <p style="font-size: 0.75rem; color: #64748b;">Berücksichtigung von Fondswechseln in der Ansparphase</p>
+        </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        <!-- Fondswechsel 1 -->
+        <div style="background: #f8fafc; border-radius: 0.5rem; padding: 1rem; border: 1px solid #e2e8f0;">
+            <div style="font-size: 0.875rem; font-weight: 500; color: #1e293b; margin-bottom: 0.75rem;">Fondswechsel 1</div>
+            <div style="background: #e2e8f0; border-radius: 0.375rem; padding: 0.5rem 0.75rem; margin-bottom: 1rem; font-size: 0.875rem;">In 5 Jahren</div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="font-size: 0.875rem; color: #64748b;">Depot Verlust</span>
+                <span style="background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 0.125rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;">-69,20 €</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <span style="font-size: 0.875rem; color: #64748b;">Privatrente Verlust</span>
+                <span style="font-size: 0.875rem; color: #1e293b;">0,00 €</span>
+            </div>
+        </div>
+        <!-- Fondswechsel 2 -->
+        <div style="background: #f8fafc; border-radius: 0.5rem; padding: 1rem; border: 1px solid #e2e8f0;">
+            <div style="font-size: 0.875rem; font-weight: 500; color: #1e293b; margin-bottom: 0.75rem;">Fondswechsel 2</div>
+            <div style="background: #e2e8f0; border-radius: 0.375rem; padding: 0.5rem 0.75rem; margin-bottom: 1rem; font-size: 0.875rem;">In 10 Jahren</div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="font-size: 0.875rem; color: #64748b;">Depot Verlust</span>
+                <span style="background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 0.125rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;">-159,33 €</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <span style="font-size: 0.875rem; color: #64748b;">Privatrente Verlust</span>
+                <span style="font-size: 0.875rem; color: #1e293b;">0,00 €</span>
+            </div>
+        </div>
+        <!-- Fondswechsel 3 -->
+        <div style="background: #f8fafc; border-radius: 0.5rem; padding: 1rem; border: 1px solid #e2e8f0;">
+            <div style="font-size: 0.875rem; font-weight: 500; color: #1e293b; margin-bottom: 0.75rem;">Fondswechsel 3</div>
+            <div style="background: #e2e8f0; border-radius: 0.375rem; padding: 0.5rem 0.75rem; margin-bottom: 1rem; font-size: 0.875rem;">In 15 Jahren</div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="font-size: 0.875rem; color: #64748b;">Depot Verlust</span>
+                <span style="background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 0.125rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;">-1.190,58 €</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <span style="font-size: 0.875rem; color: #64748b;">Privatrente Verlust</span>
+                <span style="font-size: 0.875rem; color: #1e293b;">0,00 €</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="extras-wrap">
 <div class="card extras-card">
 <div class="card-title" style="display:flex;align-items:center;gap:.5rem;">
@@ -4786,6 +4905,110 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }
 })();
+</script>
+
+<!-- Wertentwicklung Chart Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('wertentwicklungChart');
+    if (!ctx) return;
+    
+    const chartData = {
+        labels: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],
+        datasets: [
+            {
+                label: 'SmartKidsInvest (Baloise)',
+                data: [1200, 4200, 8500, 13500, 19000, 25000, 31500, 38000, 44500, 44406],
+                borderColor: '#22c55e',
+                backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                borderWidth: 2.5,
+                fill: false,
+                tension: 0.3,
+                pointRadius: 0,
+                pointHoverRadius: 4
+            },
+            {
+                label: 'Depot',
+                data: [1150, 3900, 7500, 11800, 16200, 21000, 26500, 31500, 36000, 38362],
+                borderColor: '#eab308',
+                backgroundColor: 'rgba(234, 179, 8, 0.1)',
+                borderWidth: 2.5,
+                fill: false,
+                tension: 0.3,
+                pointRadius: 0,
+                pointHoverRadius: 4
+            },
+            {
+                label: 'Einzahlung',
+                data: [1200, 3600, 6000, 8400, 10800, 13200, 15600, 18000, 20400, 22800],
+                borderColor: '#ef4444',
+                backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                borderWidth: 2.5,
+                fill: false,
+                tension: 0.3,
+                pointRadius: 0,
+                pointHoverRadius: 4
+            }
+        ]
+    };
+    
+    new Chart(ctx, {
+        type: 'line',
+        data: chartData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ' + context.parsed.y.toLocaleString('de-DE') + ' €';
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Jahre',
+                        color: '#64748b'
+                    },
+                    grid: {
+                        color: '#e2e8f0'
+                    },
+                    ticks: {
+                        color: '#64748b'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    max: 60000,
+                    ticks: {
+                        stepSize: 15000,
+                        color: '#64748b',
+                        callback: function(value) {
+                            return value.toLocaleString('de-DE');
+                        }
+                    },
+                    grid: {
+                        color: '#e2e8f0'
+                    }
+                }
+            },
+            interaction: {
+                mode: 'nearest',
+                axis: 'x',
+                intersect: false
+            }
+        }
+    });
+});
 </script>
 
 </body>
