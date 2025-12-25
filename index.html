@@ -2767,6 +2767,10 @@ button,.form-input,.form-select,.checkbox-container,.card,.nav-tab{transition:bo
 <span class="summary-value" id="summaryDuration">-</span>
 </div>
 <div class="summary-item">
+<span class="summary-label">📄 Abschlusskosten:</span>
+<span class="summary-value" id="summaryClosingCosts">-</span>
+</div>
+<div class="summary-item">
 <span class="summary-label">🎯 Guthaben nach Kosten:</span>
 <span class="summary-value" id="summarySmartKidsTarget">-</span>
 </div>
@@ -3601,13 +3605,17 @@ button,.form-input,.form-select,.checkbox-container,.card,.nav-tab{transition:bo
             const endAge = parseInt(document.getElementById('endAge').value) || 67;
             const smartKidsTargetStr = document.getElementById('smartKidsTarget').value || '250.000';
             const smartKidsTarget = parseFloat(smartKidsTargetStr.replace(/\./g, '')) || 250000;
-            
+
             const duration = endAge - childAge;
             const totalContributions = startCapital + (monthlyAmount * 12 * duration);
-            
+            const durationTo40 = 40 - childAge;
+            const totalContributionsTo40 = startCapital + (monthlyAmount * 12 * durationTo40);
+            const closingCosts = totalContributionsTo40 * 0.025;
+
             document.getElementById('summaryStartCapital').textContent = formatCurrency(startCapital);
             document.getElementById('summaryMonthly').textContent = formatCurrency(monthlyAmount);
             document.getElementById('summaryDuration').textContent = duration + ' Jahre';
+            document.getElementById('summaryClosingCosts').textContent = formatCurrency(closingCosts);
             document.getElementById('summarySmartKidsTarget').textContent = formatCurrency(smartKidsTarget);
 
             // Calculate and display return
